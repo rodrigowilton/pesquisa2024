@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório da Pesquisa Nilópolis - JULHO 2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Relatório da Pesquisa Nilópolis - JULHO 2024</h1>
+
+    <!-- Botão para exportar para Excel -->
+    <a href="{% url 'export_excel' %}">
+        <button>Exportar para Excel</button>
+    </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Pesquisadora</th>
+                <th>Bairro</th>
+                <th>Sexo</th>
+                <th>Idade</th>
+                <th>Voto Espontâneo</th>
+                <th>Voto Atual</th>
+                <th>Voto dos Nomes</th>
+                <th>Avaliação da Prefeitura</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pesquisa in pesquisas %}
+            <tr>
+                <td>{{ pesquisa.data }}</td>
+                <td>{{ pesquisa.pesquisadora }}</td>
+                <td>{{ pesquisa.bairro }}</td>
+                <td>{{ pesquisa.get_sexo_display }}</td>
+                <td>{{ pesquisa.get_idade_display }}</td>
+                <td>{{ pesquisa.voto_espontaneo }}</td>
+                <td>{{ pesquisa.get_voto_atual_display }}</td>
+                <td>{{ pesquisa.get_voto_dos_nomes_display }}</td>
+                <td>{{ pesquisa.get_avaliacao_prefeitura_display }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9">Nenhuma pesquisa encontrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
