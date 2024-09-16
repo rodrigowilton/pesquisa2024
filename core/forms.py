@@ -4,7 +4,7 @@ from .models import Pesquisa
 class PesquisaForm(forms.ModelForm):
     class Meta:
         model = Pesquisa
-        fields = ['data', 'pesquisadora', 'bairro', 'sexo', 'idade', 'voto_espontaneo', 'voto_atual', 'voto_dos_nomes', 'avaliacao_prefeitura']
+        fields = ['data', 'pesquisadora', 'bairro', 'sexo', 'idade', 'voto_espontaneo', 'voto_atual',  'avaliacao_prefeitura']
         widgets = {
             'data': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'pesquisadora': forms.Select(attrs={'class': 'form-control'}),
@@ -13,7 +13,6 @@ class PesquisaForm(forms.ModelForm):
             'idade': forms.Select(attrs={'class': 'form-control'}),
             'voto_espontaneo': forms.TextInput(attrs={'class': 'form-control'}),
             'voto_atual': forms.Select(attrs={'class': 'form-control'}),
-            'voto_dos_nomes': forms.Select(attrs={'class': 'form-control'}),
             'avaliacao_prefeitura': forms.Select(attrs={'class': 'form-control'}),
         }
 
