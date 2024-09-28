@@ -11,7 +11,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 import pandas as pd
 
-
+"""
 def importar_dados(request):
     if request.method == 'POST' and request.FILES['arquivo']:
         arquivo = request.FILES['arquivo']
@@ -82,6 +82,7 @@ def importar_dados(request):
     
     # Para requisições GET, sempre retornar o formulário de importação
     return render(request, 'importar_dados.html')
+"""
 
 def export_excel(request):
     # Criar um Workbook
