@@ -59,7 +59,6 @@
                 <th>Idade</th>
                 <th>Voto Espontâneo</th>
                 <th>Voto Atual</th>
-                <th>Voto dos Nomes</th>
                 <th>Avaliação da Prefeitura</th>
             </tr>
         </thead>
@@ -73,7 +72,6 @@
                 <td>{{ pesquisa.get_idade_display }}</td>
                 <td>{{ pesquisa.voto_espontaneo }}</td>
                 <td>{{ pesquisa.get_voto_atual_display }}</td>
-                <td>{{ pesquisa.get_voto_dos_nomes_display }}</td>
                 <td>{{ pesquisa.get_avaliacao_prefeitura_display }}</td>
             </tr>
             {% empty %}
