@@ -64,7 +64,6 @@ class Pesquisa(models.Model):
 	idade = models.CharField(max_length=10, choices=IDADE_CHOICES)
 	voto_espontaneo = models.CharField(max_length=100, blank=True)
 	voto_atual = models.CharField(max_length=20, choices=PREFEITO_CHOICES)
-	voto_dos_nomes = models.CharField(max_length=50, choices=PREFEITO_DOS_NOMES_CHOICES)
 	avaliacao_prefeitura = models.CharField(max_length=10, choices=AVALIACAO_CHOICES)
 	
 	def __str__(self):
