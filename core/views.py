@@ -93,7 +93,7 @@ def export_excel(request):
     # Cabeçalhos
     headers = [
         'Data', 'Pesquisadora', 'Bairro', 'Sexo', 'Idade',
-        'Voto Espontâneo', 'Voto Atual', 'Voto dos Nomes', 'Avaliação da Prefeitura'
+        'Voto Espontâneo', 'Voto Atual', 'Avaliação da Prefeitura'
     ]
     ws.append(headers)
     
@@ -108,7 +108,6 @@ def export_excel(request):
             pesquisa.get_idade_display(),
             pesquisa.voto_espontaneo,
             pesquisa.get_voto_atual_display(),
-            pesquisa.get_voto_dos_nomes_display(),
             pesquisa.get_avaliacao_prefeitura_display()
         ])
     
